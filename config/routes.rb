@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :spotify_users, only: [:create]
+  
+  namespace :api do
+    namespace :v1 do
+      resources :spotify_users, only: [:create]
+    end 
+  end
 end

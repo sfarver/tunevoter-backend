@@ -1,4 +1,4 @@
-class SpotifyUsersController < ApplicationController
+class Api::V1::SpotifyUsersController < ApplicationController
   def create
     venue = Venue.find_by(slug: spotify_user_params[:venue_slug])
     
@@ -9,4 +9,5 @@ class SpotifyUsersController < ApplicationController
   
   def spotify_user_params
     params.require(:spotify_user).permit(:access_token, :venue_slug)
+  end
 end

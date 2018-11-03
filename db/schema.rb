@@ -16,12 +16,14 @@ ActiveRecord::Schema.define(version: 2018_11_02_200921) do
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
+    t.string "spotify_id"
   end
 
   create_table "spotify_user_artists", force: :cascade do |t|
     t.bigint "spotify_user_id"
     t.bigint "artist_id"
     t.string "time_duration"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_spotify_user_artists_on_artist_id"
@@ -48,12 +50,14 @@ ActiveRecord::Schema.define(version: 2018_11_02_200921) do
   create_table "venue_spotify_users", force: :cascade do |t|
     t.bigint "venue_id"
     t.bigint "spotify_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["spotify_user_id"], name: "index_venue_spotify_users_on_spotify_user_id"
     t.index ["venue_id"], name: "index_venue_spotify_users_on_venue_id"
   end
 
   create_table "venues", force: :cascade do |t|
-    t.string "sign_up_link"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
