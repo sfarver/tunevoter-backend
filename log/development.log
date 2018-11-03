@@ -1,0 +1,247 @@
+  [1m[35m (612.4ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (450.7ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateVenues (20181102190804)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "sign_up_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181102190804_create_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102190804"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSpotifyUsers (20181102191100)
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181102191100_create_spotify_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102191100"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateArtists (20181102192403)
+  [1m[35m (13.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key)[0m
+  ↳ db/migrate/20181102192403_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102192403"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSpotifyUserArtists (20181102192559)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSpotifyUserArtists (20181102192559)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSpotifyUserArtists (20181102192559)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (43.3ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181102192559_create_spotify_user_artists.rb:3
+  [1m[35m (33.6ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/migrate/20181102192559_create_spotify_user_artists.rb:3
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/migrate/20181102192559_create_spotify_user_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102192559"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTracks (20181102200833)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/migrate/20181102200833_create_tracks.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/migrate/20181102200833_create_tracks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102200833"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVenueSpotifyUsers (20181102200921)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint)[0m
+  ↳ db/migrate/20181102200921_create_venue_spotify_users.rb:3
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/migrate/20181102200921_create_venue_spotify_users.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/migrate/20181102200921_create_venue_spotify_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181102200921"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (8.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-02 21:03:25.785862"], ["updated_at", "2018-11-02 21:03:25.785862"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (12.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (14.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:21
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (14.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:43
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:43
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:48
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint)[0m
+  ↳ db/schema.rb:48
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "sign_up_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:21
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:21
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:21
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:43
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:43
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:48
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint)[0m
+  ↳ db/schema.rb:48
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:55
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "sign_up_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:55
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181102200921)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181102192559),
+(20181102192403),
+(20181102200833),
+(20181102190804),
+(20181102191100);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-02 21:48:32.233674"], ["updated_at", "2018-11-02 21:48:32.233674"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (25.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-11-02 21:48:32.243582"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
