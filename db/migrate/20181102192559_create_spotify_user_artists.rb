@@ -4,6 +4,7 @@ class CreateSpotifyUserArtists < ActiveRecord::Migration[5.2]
       t.belongs_to :spotify_user
       t.belongs_to :artist
       t.string :time_duration
+      t.integer :rank
       t.timestamps
     end
   end
