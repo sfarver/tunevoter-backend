@@ -2,6 +2,10 @@ class SpotifyApi
   def get_all_spotify_info(access_token, venue)
     get_user_info(access_token, venue)
   end
+  
+  # def get_similar_artists(spotify_artist_id)
+  #   url = 'https://api.spotify.com/v1/me'
+  # end
 
   private
 
