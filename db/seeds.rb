@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Venue.create({
-  slug: "codered"
+  slug: "codered",
+  email: "admin@email.com",
+  password_digest: Venue.digest('asdf')
 })
