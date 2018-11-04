@@ -1,5 +1,13 @@
 class Venue < ApplicationRecord
+  has_secure_password
   has_many :spotify_users, through: :venue_spotify_users
+  validates :email, uniqueness: { case_sensitive: false }
+
+  def Venue.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+
+    BCrypt::Password.create(string, cost: cost)
+  end
 
   def most_popular_artists(is_weighted)
 
