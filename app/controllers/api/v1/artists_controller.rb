@@ -9,5 +9,6 @@ class Api::V1::ArtistsController < ApplicationController
       render json: { status: 500, error: 'could not retrieve top artists'}
     else
       render json: artists_list
+    end
   end
 end
