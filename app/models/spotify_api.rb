@@ -27,10 +27,10 @@ class SpotifyApi
     
     user.save
 
-    VenueSpotifyUser.create({
+    VenueSpotifyUser.find_or_create_by(
       venue: venue,
       spotify_user: user  
-    })
+    )
 
     self.get_top_artists(access_token, user)
   end
