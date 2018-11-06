@@ -4936,3 +4936,367 @@ Processing by Api::V1::AuthController#create as */*
 Completed 202 Accepted in 104ms (Views: 4.6ms | ActiveRecord: 6.6ms)
 
 
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-04 13:16:54 -0600
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-05 18:41:50 -0600
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 21ms (Views: 19.0ms | ActiveRecord: 28.3ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:44:59 -0600
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (109.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 127.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column venues.email does not exist
+LINE 1: SELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1...
+                                               ^
+: SELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2):
+  
+app/controllers/api/v1/auth_controller.rb:5:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (13.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (14.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (168.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "spotify_id" character varying)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:22
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "rank" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (5.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:59
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "slug" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (23.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "spotify_id" character varying)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:22
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "rank" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (4.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (4.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:50
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:50
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:59
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "slug" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (32.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-11-06 00:45:36.269926"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-11-06 00:45:36.310455"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE LOWER("venues"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Create (2.4ms)[0m  [1m[32mINSERT INTO "venues" ("slug", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["slug", "codered"], ["email", "admin@email.com"], ["password_digest", "$2a$10$vH.OSemeXGGvrmioQXCosOoghKZYJWu.9Jf22pSnzWC//YhZPlDc6"], ["created_at", "2018-11-06 00:45:36.466847"], ["updated_at", "2018-11-06 00:45:36.466847"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE LOWER("venues"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:45:48 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (20.57ms)
+Completed 202 Accepted in 123ms (Views: 29.3ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:46:21 -0600
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (3.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 202 Accepted in 70ms (Views: 0.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:48:52 -0600
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (4.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.47ms)
+Completed 202 Accepted in 81ms (Views: 2.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:49:15 -0600
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/v1/login" for 127.0.0.1 at 2018-11-05 18:49:22 -0600
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}, "auth"=>{"venue"=>{"email"=>"admin@email.com", "password"=>"[FILTERED]"}}}
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."email" = $1 LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 202 Accepted in 72ms (Views: 1.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 09:56:31 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.39ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 09:57:38 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 112ms (Views: 111.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 09:58:15 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.8ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:03:27 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.64ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 44ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:03:35 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:06:02 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.75ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:07:33 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.73ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:10:24 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered&access_token=BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k&token_type=Bearer&expires_in=3600&state=123", "access_token"=>{}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.8ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:11:06 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{"access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k", "expires_in"=>"3600", "state"=>"123", "token_type"=>"Bearer"}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.77ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 79ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:11:10 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{"access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k", "expires_in"=>"3600", "state"=>"123", "token_type"=>"Bearer"}}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.78ms)
+Filter chain halted as :authorized rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:14:52 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{"access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k", "expires_in"=>"3600", "state"=>"123", "token_type"=>"Bearer"}}}
+Unpermitted parameter: :access_token
+  [1m[36mVenue Load (3.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."slug" = $1 LIMIT $2[0m  [["slug", "codered"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/spotify_users_controller.rb:5
+Unpermitted parameter: :access_token
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 124.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/spotify_api.rb:15:in `+'
+app/models/spotify_api.rb:15:in `get_user_info'
+app/models/spotify_api.rb:3:in `get_all_spotify_info'
+app/controllers/api/v1/spotify_users_controller.rb:7:in `create'
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:15:29 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>{"access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k", "expires_in"=>"3600", "state"=>"123", "token_type"=>"Bearer"}}}
+Unpermitted parameter: :access_token
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."slug" = $1 LIMIT $2[0m  [["slug", "codered"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/spotify_users_controller.rb:6
+Unpermitted parameter: :access_token
+Completed 500 Internal Server Error in 145224ms (ActiveRecord: 8.6ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/spotify_api.rb:15:in `+'
+app/models/spotify_api.rb:15:in `get_user_info'
+app/models/spotify_api.rb:3:in `get_all_spotify_info'
+app/controllers/api/v1/spotify_users_controller.rb:8:in `create'
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:17:55 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k"}}
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."slug" = $1 LIMIT $2[0m  [["slug", "codered"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/spotify_users_controller.rb:6
+Completed 500 Internal Server Error in 2896ms (ActiveRecord: 0.7ms)
+
+
+  
+RestClient::Unauthorized (401 Unauthorized):
+  
+app/models/spotify_api.rb:15:in `get_user_info'
+app/models/spotify_api.rb:3:in `get_all_spotify_info'
+app/controllers/api/v1/spotify_users_controller.rb:8:in `create'
+Started POST "/api/v1/spotify_users" for 127.0.0.1 at 2018-11-06 10:18:06 -0600
+Processing by Api::V1::SpotifyUsersController#create as */*
+  Parameters: {"spotify_user"=>{"venue_slug"=>"codered", "access_token"=>"BQC-26HmwmKe_yOCV8dKmxt2h5U38jYY1IzYv_mP3NmJ1_ryHFixW6yVKrzQoG8U3hLXNoRPw0tCrIMtQLEU8zUJrieGoE3sX-yM39kB9hEG-StXXMqiLz_PjYj3UWnD-0JTvVlQIKMEGQM7bJLBr1Hgk2QTb7k"}}
+  [1m[36mVenue Load (19.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."slug" = $1 LIMIT $2[0m  [["slug", "codered"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."slug" = $1 LIMIT $2[0m  [["slug", "codered"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/spotify_users_controller.rb:6
+Completed 500 Internal Server Error in 855197ms (ActiveRecord: 19.7ms)
+
+
+  
+RestClient::Unauthorized (401 Unauthorized):
+  
+app/models/spotify_api.rb:15:in `get_user_info'
+app/models/spotify_api.rb:3:in `get_all_spotify_info'
+app/controllers/api/v1/spotify_users_controller.rb:8:in `create'
