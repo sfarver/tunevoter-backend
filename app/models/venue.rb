@@ -11,7 +11,7 @@ class Venue < ApplicationRecord
 
   def most_popular_artists(is_weighted)
 
-    users = self.select_venue_users
+    users = VenueSpotifyUser.all.select{|venue_spotify_user| venue_spotify_user.venue == self}
 
     venue_artists_hash = {}
 
@@ -31,11 +31,5 @@ class Venue < ApplicationRecord
     end
 
     venue_artists_hash
-  end
-
-  private
-
-  def select_venue_users
-    VenueSpotifyUser.all.select{|venue_spotify_user| venue_spotify_user.venue == self}
   end
 end
