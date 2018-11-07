@@ -31,4 +31,24 @@ class Venue < ApplicationRecord
     
     venue_artists_hash
   end
+  
+  def most_popular_genres(is_weighted)
+    artists = most_popular_artists(is_weighted)
+        
+    venue_genres_hash = {}
+    
+    artists.each do |artist_name, score|
+      artist = Artist.find_by(name: artist_name)
+      
+      artist.genres.each do |genre|
+        if venue_genres_hash[genre.name]
+          venue_genres_hash[genre.name] += score
+        else
+          venue_genres_hash[genre.name] = score
+        end
+      end      
+    end
+    
+    venue_genres_hash
+  end
 end
