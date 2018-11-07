@@ -7,6 +7,34 @@ class SpotifyApi
   #   url = 'https://api.spotify.com/v1/me'
   # end
 
+  def self.update_artist_data(spotify_artist_id)
+    url = "https://api.spotify.com/v1/artists/#{spotify_artist_id}"
+    
+    api_data = RestClient.get(url, headers={'Authorization': 'Bearer ' + access_token})
+    parsed_data = JSON.parse(api_data)
+  end
+  
+  def self.get_token
+    url = 'https://accounts.spotify.com/api/token'
+    
+    enc_keys = 'NTZjYzkwZmQzYjdkNDM4Zjg4ZjVlZmMyOTlhYWRhMGI6ZDIyZmJhMjAxN2EwNGYwMGFjNmFjMTQwNDMwOTQ1ODI='
+    
+     # Figaro / Env not working Base64.encode64("#{ENV['spotify_key']}:#{ENV['spotify_secret']}")
+    
+    token = RestClient.post(
+      url,
+      { 
+        'grant_type': 'client_credentials'
+      },
+      {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': "Basic #{enc_keys}"
+      }
+    )
+    
+    token
+  end
+
   private
 
   def self.get_user_info(access_token, venue)
@@ -40,9 +68,6 @@ class SpotifyApi
     api_data = RestClient.get(url, headers={'Authorization': 'Bearer ' + access_token})
     parsed_data = JSON.parse(api_data)
 
-    # puts parsed_data
-    # byebug
-
     parsed_data["items"].each.with_index(1) do |artist_object, index|
       self.parse_one_artist(artist_object, index, user)
     end
@@ -53,7 +78,25 @@ class SpotifyApi
   end
 
   def self.parse_one_artist(artist_object, index, user)
-    artist = Artist.find_or_create_by(spotify_id: artist_object["id"])
+    artist = Artist.find_or_create_by(
+      spotify_id: artist_object["id"],
+      followers: artist_object["followers"],
+      name: artist_object["name"],
+      popularity: artist_object["popularity"]
+    )
+    
+    if !artist_object["genres"].empty?
+      artist_object["genres"].each do |genre|
+        artist_genre = Genre.find_or_create_by(
+          name: genre
+        )
+        
+        ArtistGenre.find_or_create_by(
+          artist: artist,
+          genre: artist_genre
+        )
+      end
+    end
 
     SpotifyUserArtist.create({
       spotify_user: user,

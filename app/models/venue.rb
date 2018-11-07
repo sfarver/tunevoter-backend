@@ -19,17 +19,16 @@ class Venue < ApplicationRecord
       artists = user.get_top_artists
 
       artists.each do |artist|
-        # NOTE: Need to ensure there are 50 artists being pulled each time
         score = is_weighted ? 50 - artist.rank : 1
 
-        if venue_artists_hash[artist]
-          venue_artists_hash[artist] += score
+        if venue_artists_hash[artist.display_name]
+          venue_artists_hash[artist.display_name] += score
         else
-          venue_artists_hash[artist] = score
+          venue_artists_hash[artist.display_name] = score
         end
       end
     end
-
+    
     venue_artists_hash
   end
 end

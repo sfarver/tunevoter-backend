@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_02_200921) do
+ActiveRecord::Schema.define(version: 2018_11_07_050725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "artist_genres", force: :cascade do |t|
+    t.bigint "artist_id"
+    t.bigint "genre_id"
+    t.index ["artist_id"], name: "index_artist_genres_on_artist_id"
+    t.index ["genre_id"], name: "index_artist_genres_on_genre_id"
+  end
+
   create_table "artists", force: :cascade do |t|
     t.string "spotify_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "spotify_user_artists", force: :cascade do |t|
@@ -64,4 +75,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_200921) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "artist_genres", "artists"
+  add_foreign_key "artist_genres", "genres"
 end

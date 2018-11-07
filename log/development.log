@@ -5300,3 +5300,941 @@ RestClient::Unauthorized (401 Unauthorized):
 app/models/spotify_api.rb:15:in `get_user_info'
 app/models/spotify_api.rb:3:in `get_all_spotify_info'
 app/controllers/api/v1/spotify_users_controller.rb:8:in `create'
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (420.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunevoter-api_development"[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (383.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunevoter-api_test"[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "spotify_users"[0m
+  [1m[36mSpotifyUser Load (0.5ms)[0m  [1m[34mSELECT  "spotify_users".* FROM "spotify_users" ORDER BY "spotify_users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:50:59 -0600
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (5.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (21.3ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (24.8ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (1.6ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (24.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (1.2ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (0.7ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mVenueSpotifyUser Load (4.7ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:51:58 -0600
+  [1m[36mVenue Load (18.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (7.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (107.5ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (1.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (10.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (25.2ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (3.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 58081ms (ActiveRecord: 388.3ms)
+
+
+  
+NoMethodError (undefined method `errors?' for {}:Hash):
+  
+app/controllers/api/v1/artists_controller.rb:11:in `top_artists'
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (2.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (1.8ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (5.5ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 6229ms (ActiveRecord: 10.3ms)
+
+
+  
+NoMethodError (undefined method `errors?' for {}:Hash):
+  
+app/controllers/api/v1/artists_controller.rb:11:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:52:14 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (54.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (1.3ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (7.9ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 34756ms (ActiveRecord: 132.3ms)
+
+
+  
+NoMethodError (undefined method `errors?' for {}:Hash):
+  
+app/controllers/api/v1/artists_controller.rb:9:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:53:05 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (7.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (1.2ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 34630ms (ActiveRecord: 230.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `all'
+app/models/venue_spotify_user.rb:6:in `get_top_artists'
+app/models/venue.rb:19:in `block in most_popular_artists'
+app/models/venue.rb:18:in `each'
+app/models/venue.rb:18:in `most_popular_artists'
+app/controllers/api/v1/artists_controller.rb:6:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:53:44 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (5.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (2.7ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (2.8ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 60417ms (ActiveRecord: 57.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `all'
+app/models/venue_spotify_user.rb:6:in `get_top_artists'
+app/models/venue.rb:19:in `block in most_popular_artists'
+app/models/venue.rb:18:in `each'
+app/models/venue.rb:18:in `most_popular_artists'
+app/controllers/api/v1/artists_controller.rb:6:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:54:52 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (1.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (2.3ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (2.2ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 90986ms (ActiveRecord: 82.5ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `all'
+app/models/venue_spotify_user.rb:6:in `get_top_artists'
+app/models/venue.rb:19:in `block in most_popular_artists'
+app/models/venue.rb:18:in `each'
+app/models/venue.rb:18:in `most_popular_artists'
+app/controllers/api/v1/artists_controller.rb:6:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:56:30 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (3.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (16.9ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (1.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (6.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.5ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 52766ms (ActiveRecord: 87.5ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `=='
+app/models/venue_spotify_user.rb:8:in `block in get_top_artists'
+app/models/venue_spotify_user.rb:6:in `get_top_artists'
+app/models/venue.rb:19:in `block in most_popular_artists'
+app/models/venue.rb:18:in `each'
+app/models/venue.rb:18:in `most_popular_artists'
+app/controllers/api/v1/artists_controller.rb:6:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:57:38 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (2.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (2.5ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.7ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.7ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 1790ms (ActiveRecord: 60.4ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x00007febf851f4c8>
+Did you mean?  try):
+  
+app/models/venue_spotify_user.rb:7:in `block in get_top_artists'
+app/models/venue_spotify_user.rb:6:in `get_top_artists'
+app/models/venue.rb:19:in `block in most_popular_artists'
+app/models/venue.rb:18:in `each'
+app/models/venue.rb:18:in `most_popular_artists'
+app/controllers/api/v1/artists_controller.rb:6:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 13:58:37 -0600
+  [1m[35m (27.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (2.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (0.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (76.9ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (4.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (5.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (2.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:8
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 14:01:54 -0600
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (4.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (2.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (6.6ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (4.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (3.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (6.9ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:8
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:08:17 -0600
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (24.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (4.1ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (24.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (5.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (3.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (4.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (29.3ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:11:38 -0600
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (10.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (10.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (6.1ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (4.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (6.8ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (1.7ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:12:46 -0600
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (6.9ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenue Load (2.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (1.7ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.6ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (1.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.5ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mVenue Load (0.3ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (2.4ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (0.8ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (1.3ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mSpotifyUserArtist Load (2.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:16:44 -0600
+Completed 500 Internal Server Error in 247733ms (ActiveRecord: 170.4ms)
+
+
+  
+NoMethodError (undefined method `errors?' for #<Hash:0x00007ffd2154f878>):
+  
+app/controllers/api/v1/artists_controller.rb:9:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:17:05 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (1.7ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.2ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 38.7ms)
+
+
+  
+NoMethodError (undefined method `errors?' for #<Hash:0x00007ffd1fbe7250>):
+  
+app/controllers/api/v1/artists_controller.rb:9:in `top_artists'
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (13.4ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (0.6ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (9.7ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 155.4ms)
+
+
+  
+NoMethodError (undefined method `errors?' for #<Hash:0x00007ffd2075f3a8>):
+  
+app/controllers/api/v1/artists_controller.rb:9:in `top_artists'
+Started GET "/api/v1/top_artists" for 127.0.0.1 at 2018-11-06 15:18:36 -0600
+Processing by Api::V1::ArtistsController#top_artists as */*
+  Parameters: {"artist"=>{}}
+  [1m[36mVenue Load (0.8ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:27
+  [1m[36mVenueSpotifyUser Load (0.9ms)[0m  [1m[34mSELECT "venue_spotify_users".* FROM "venue_spotify_users"[0m
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.0ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.1ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mCACHE Venue Load (0.2ms)[0m  [1m[34mSELECT  "venues".* FROM "venues" WHERE "venues"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/venue.rb:14
+  [1m[36mSpotifyUserArtist Load (1.9ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.0ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+  [1m[36mCACHE SpotifyUserArtist Load (0.1ms)[0m  [1m[34mSELECT "spotify_user_artists".* FROM "spotify_user_artists"[0m
+  ↳ app/models/venue_spotify_user.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.2ms)
+Completed 200 OK in 813ms (Views: 97.7ms | ActiveRecord: 104.0ms)
+
+
+  [1m[36mSpotifyUser Load (2.1ms)[0m  [1m[34mSELECT  "spotify_users".* FROM "spotify_users" ORDER BY "spotify_users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20181107050642)
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (166.5ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20181107050642_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181107050642"]]
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateArtistGenres (20181107050725)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (67.4ms)[0m  [1m[35mCREATE TABLE "artist_genres" ("id" bigserial primary key, "artist_id" bigint, "genre_id" bigint, CONSTRAINT "fk_rails_37ac7c9770"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+, CONSTRAINT "fk_rails_9b179f16a9"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+)[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_artist_id" ON "artist_genres"  ("artist_id")[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_genre_id" ON "artist_genres"  ("genre_id")[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181107050725"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (17.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-11-07 05:18:32.424464"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mArtist Load (13.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (848.6ms)[0m  [1m[35mCREATE DATABASE "tunevoter-api_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (13.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (31.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "artist_genres" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "artist_genres" ("id" bigserial primary key, "artist_id" bigint, "genre_id" bigint)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_artist_id" ON "artist_genres"  ("artist_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_genre_id" ON "artist_genres"  ("genre_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (14.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "spotify_id" character varying)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (7.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "rank" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:61
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:61
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:61
+  [1m[35m (9.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:70
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "slug" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:70
+  [1m[35m (10.7ms)[0m  [1m[35mALTER TABLE "artist_genres" ADD CONSTRAINT "fk_rails_37ac7c9770"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  ↳ db/schema.rb:78
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "artist_genres" ADD CONSTRAINT "fk_rails_9b179f16a9"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+[0m
+  ↳ db/schema.rb:79
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (2.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artist_genres" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (22.5ms)[0m  [1m[35mCREATE TABLE "artist_genres" ("id" bigserial primary key, "artist_id" bigint, "genre_id" bigint)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_artist_id" ON "artist_genres"  ("artist_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_genre_id" ON "artist_genres"  ("genre_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:25
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "spotify_id" character varying)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_user_artists" CASCADE[0m
+  ↳ db/schema.rb:33
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "spotify_user_artists" ("id" bigserial primary key, "spotify_user_id" bigint, "artist_id" bigint, "time_duration" character varying, "rank" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:33
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_artist_id" ON "spotify_user_artists"  ("artist_id")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_spotify_user_artists_on_spotify_user_id" ON "spotify_user_artists"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "spotify_users" CASCADE[0m
+  ↳ db/schema.rb:44
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "spotify_users" ("id" bigserial primary key, "spotify_id" character varying, "display_name" character varying, "email" character varying, "has_paid_spotify" boolean, "birthday" date, "country" character varying, "followers" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:56
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "artist_id" bigint)[0m
+  ↳ db/schema.rb:56
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_artist_id" ON "tracks"  ("artist_id")[0m
+  ↳ db/schema.rb:56
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "venue_spotify_users" CASCADE[0m
+  ↳ db/schema.rb:61
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "venue_spotify_users" ("id" bigserial primary key, "venue_id" bigint, "spotify_user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:61
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_spotify_user_id" ON "venue_spotify_users"  ("spotify_user_id")[0m
+  ↳ db/schema.rb:61
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_venue_spotify_users_on_venue_id" ON "venue_spotify_users"  ("venue_id")[0m
+  ↳ db/schema.rb:61
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:70
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "slug" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:70
+  [1m[35m (8.3ms)[0m  [1m[35mALTER TABLE "artist_genres" ADD CONSTRAINT "fk_rails_37ac7c9770"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  ↳ db/schema.rb:78
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "artist_genres" ADD CONSTRAINT "fk_rails_9b179f16a9"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+[0m
+  ↳ db/schema.rb:79
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181107050725)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181102192559),
+(20181102192403),
+(20181102200833),
+(20181102190804),
+(20181107050642),
+(20181102191100),
+(20181102200921);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-07 05:30:58.854335"], ["updated_at", "2018-11-07 05:30:58.854335"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-11-07 05:30:58.859487"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "venues" WHERE LOWER("venues"."email") = LOWER($1) LIMIT $2[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mVenue Create (1.7ms)[0m  [1m[32mINSERT INTO "venues" ("slug", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["slug", "codered"], ["email", "admin@email.com"], ["password_digest", "$2a$10$a3oLxK4gPdxZtMpRt9i6c.RM1fArKp4NAjiaeCoz0Y9aXphmMBQJS"], ["created_at", "2018-11-07 05:30:58.985264"], ["updated_at", "2018-11-07 05:30:58.985264"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (282.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunevoter-api_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (222.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "tunevoter-api_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20181107050642)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (23.1ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying)[0m
+  ↳ db/migrate/20181107050642_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181107050642"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateArtistGenres (20181107050725)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (51.5ms)[0m  [1m[35mCREATE TABLE "artist_genres" ("id" bigserial primary key, "artist_id" bigint, "genre_id" bigint, CONSTRAINT "fk_rails_37ac7c9770"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+, CONSTRAINT "fk_rails_9b179f16a9"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+)[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_artist_id" ON "artist_genres"  ("artist_id")[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_artist_genres_on_genre_id" ON "artist_genres"  ("genre_id")[0m
+  ↳ db/migrate/20181107050725_create_artist_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181107050725"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-11-07 05:36:15.017732"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mArtist Load (1.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/stephenfarver/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1148116658679623010)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
