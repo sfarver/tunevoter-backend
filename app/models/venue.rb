@@ -21,10 +21,10 @@ class Venue < ApplicationRecord
       artists.each do |artist|
         score = is_weighted ? 50 - artist.rank : 1
 
-        if venue_artists_hash[artist.display_name]
-          venue_artists_hash[artist.display_name] += score
+        if venue_artists_hash[artist.artist.name]
+          venue_artists_hash[artist.artist.name] += score
         else
-          venue_artists_hash[artist.display_name] = score
+          venue_artists_hash[artist.artist.name] = score
         end
       end
     end

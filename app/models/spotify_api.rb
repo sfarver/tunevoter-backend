@@ -21,7 +21,7 @@ class SpotifyApi
     
      # Figaro / Env not working Base64.encode64("#{ENV['spotify_key']}:#{ENV['spotify_secret']}")
     
-    token = RestClient.post(
+    response = RestClient.post(
       url,
       { 
         'grant_type': 'client_credentials'
@@ -32,7 +32,8 @@ class SpotifyApi
       }
     )
     
-    token
+    parsed_data = JSON.parse(response)
+    token = parsed_data["access_token"]
   end
 
   private
