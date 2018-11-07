@@ -1,5 +1,6 @@
 class Venue < ApplicationRecord
   has_secure_password
+  has_many :venue_spotify_users
   has_many :spotify_users, through: :venue_spotify_users
   validates :email, uniqueness: { case_sensitive: false }
 
