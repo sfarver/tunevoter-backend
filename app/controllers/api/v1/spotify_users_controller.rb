@@ -4,7 +4,7 @@ class Api::V1::SpotifyUsersController < ApplicationController
   def index 
     venue = current_venue
     
-    venue.users_by_date
+    render json: venue.users_by_date
   end
   
   def create

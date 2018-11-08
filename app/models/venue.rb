@@ -35,7 +35,7 @@ class Venue < ApplicationRecord
   
   def most_popular_genres(is_weighted)
     artists = most_popular_artists(is_weighted)
-        
+    
     venue_genres_hash = {}
     
     artists.each do |artist_name, score|
