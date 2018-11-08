@@ -52,4 +52,14 @@ class Venue < ApplicationRecord
     
     venue_genres_hash
   end
+  
+  def users_by_date
+    self.spotify_users.reduce({}) do |total, user|
+      date = user.created_at.to_date
+      
+      total[date] ? total[date] += 1 : total[date] = 1
+      
+      total
+    end
+  end
 end
