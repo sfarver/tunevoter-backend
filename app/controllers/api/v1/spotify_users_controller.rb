@@ -4,15 +4,7 @@ class Api::V1::SpotifyUsersController < ApplicationController
   def index 
     venue = current_venue
     
-    users_growth = venue.spotify_users.reduce({}) do |total, user|
-      date = user.created_at.to_date
-      
-      total[date] ? total[date] += 1 : total[date] = 1
-      
-      total
-    end
-
-    users_growth  
+    venue.users_by_date
   end
   
   def create
