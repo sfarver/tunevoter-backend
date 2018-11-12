@@ -8,8 +8,10 @@
 #
 
 spotify_key: 56cc90fd3b7d438f88f5efc299aada0b
-
 spotify_secret: d22fba2017a04f00ac6ac14043094582
+
+last_fm_key: ab11022eb5bc816d12a8c246299d0248
+last_fm_secret: aa85af059ce438e4fe36aefc190942bc
 
 secret: uxZRYJoq@keDuOYjn!WOQ8253wzvX&BbpgplNAE!JMP@GFhzximvEIraysN&8Xns%yoFI1CTioWa!Xg9l3N2sanUu@3a!IztxUw
 
