@@ -20,12 +20,22 @@ class LastFMApi
 
       venue_artists.each do |artist|
         binding.pry
-        total_score += artist.score 
+
+        if similar_artists.contains?(artist)
+          match_score += similar_artists[artist].match * artist.score
+        else
+          
+
+        total_score += artist.score
       end
 
     # take in similar artists and venue_artists arrays
     # set match percent equal to 0
     # iterate over venue artists to see if match similar artists
       # if equal, add to match percentage by their weight
+      # if not:
+        # request second layer of similar artists
+        # recursively call method until artist_match_score is derived or confident enough
+
   end
 end
