@@ -24,7 +24,7 @@ class LastFMApi
         if similar_artists.contains?(artist)
           match_score += similar_artists[artist].match * artist.score
         else
-          
+
 
         total_score += artist.score
       end
@@ -36,6 +36,7 @@ class LastFMApi
       # if not:
         # request second layer of similar artists
         # recursively call method until artist_match_score is derived or confident enough
+        # see jacardian index
 
   end
 end
